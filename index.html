@@ -1,1470 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="IQRA Tuition Centre – Learn for Serve. Education with Values, Skills & Excellence. Academic education, Islamic studies, AI & Coding, Science, NEET, JEE, TNPSC and future-ready skills in Melvisharam.">
-
-    <meta name="keywords"
-          content="IQRA Tuition Centre, IQRA Incubation Centre, tuition centre Melvisharam, tuition Melvisharam, NEET coaching, JEE coaching, TNPSC coaching, Islamic studies, Quran Hifz, AI coding, science projects">
-
-    <meta name="author" content="IQRA Tuition Centre">
-
-    <meta property="og:title" content="IQRA Tuition Centre | Learn for Serve">
-    <meta property="og:description" content="Education with Values, Skills & Excellence.">
-    <meta property="og:type" content="website">
-
-    <title>IQRA Tuition Centre | Learn for Serve</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-          rel="stylesheet">
-
-    <!-- Website CSS -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IQRA Tuition Centre – Learn for Serve. Education with Values, Skills & Excellence.">
+<title>IQRA Tuition Centre | Learn for Serve</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#17231f;background:#fbfaf6;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(251,250,246,.97);border-bottom:1px solid #e6e1d7}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800}
+.logo-mark{width:44px;height:44px;border-radius:12px;background:#153f35;color:#fff;display:grid;place-items:center;font-size:18px}
+.logo span{display:block;color:#153f35;font-size:18px}.logo small{display:block;color:#68736e;font-size:11px}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav a{font-size:14px;font-weight:600;color:#35433e}
+nav a:hover{color:#a46b27}
+.wa{background:#1b6b50;color:#fff!important;padding:10px 15px;border-radius:9px}
+.menu{display:none;background:none;border:0;font-size:27px}
+.hero{background:linear-gradient(135deg,#edf3ed 0%,#fbfaf6 62%);padding:85px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.badge{display:inline-block;background:#e4efe8;color:#1b6b50;padding:7px 13px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:.8px;margin-bottom:18px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:#a46b27;margin-bottom:12px}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.04;letter-spacing:-2px;margin-bottom:22px;color:#16352d}
+h1 span,h2 span{color:#a46b27}
+.hero p.lead{font-size:18px;color:#58635e;max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.btn{display:inline-block;padding:13px 19px;border-radius:9px;font-weight:800;border:1px solid #173f35}
+.primary{background:#173f35;color:white}.outline{color:#173f35;background:white}
+.hero-points{display:flex;gap:20px;flex-wrap:wrap;color:#3f4d47;font-size:14px;font-weight:700}
+.hero-card{background:#173f35;color:white;border-radius:24px;padding:18px;box-shadow:0 18px 50px rgba(23,63,53,.18)}
+.photo{height:370px;border-radius:17px;background:linear-gradient(145deg,#dfe9e2,#aebfb5);display:grid;place-items:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}.photo img[src=""]{display:none}
+.photo-text{padding:20px;text-align:center;color:#173f35;font-weight:800}
+.card-caption{padding:18px 5px 3px}.card-caption small{opacity:.7}.card-caption strong{display:block;font-size:20px}
+section{padding:90px 0}
+.section-head{text-align:center;max-width:750px;margin:0 auto 48px}
+h2{font-size:clamp(32px,4vw,50px);line-height:1.1;color:#173f35;margin-bottom:15px}
+.section-head p{color:#65706b}
+.quick{background:#173f35;color:white;padding:25px 0}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.quick-item{padding:12px 15px;border-right:1px solid rgba(255,255,255,.18)}.quick-item:last-child{border:0}
+.quick-item small{display:block;opacity:.65;font-size:10px;letter-spacing:1px}.quick-item strong{font-size:16px}
+.about{background:white}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.image-box{min-height:390px;border-radius:20px;background:linear-gradient(145deg,#dfe9e2,#c7d4cc);overflow:hidden;display:grid;place-items:center}
+.image-box img{width:100%;height:100%;object-fit:cover;min-height:390px}
+.image-fallback{padding:30px;text-align:center;color:#173f35;font-size:22px;font-weight:800}
+.about-text p{color:#5e6964;margin:0 0 16px}.checks{display:grid;gap:13px;margin-top:22px}.checks div{font-weight:700}.checks span{color:#1b6b50;margin-right:9px}
+.educator{background:#f0f4ef}.educator-card{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;background:white;border-radius:22px;padding:30px;box-shadow:0 12px 35px rgba(0,0,0,.06)}
+.teacher-photo{height:300px;border-radius:16px;overflow:hidden;background:#dfe9e2;display:grid;place-items:center}.teacher-photo img{width:100%;height:100%;object-fit:cover}
+.teacher-fallback{font-weight:800;color:#173f35;text-align:center;padding:20px}
+.role{color:#a46b27;font-weight:800;margin-bottom:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tags span{background:#e9f0eb;padding:7px 11px;border-radius:20px;font-size:12px;font-weight:700}
+.classes{background:#fbfaf6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.class-card,.program{background:white;border:1px solid #e7e2d8;border-radius:18px;padding:28px}.class-card.featured{border:2px solid #1b6b50;transform:translateY(-7px)}
+.number{color:#a46b27;font-weight:800;font-size:12px}.class-card h3,.program h3{font-size:25px;color:#173f35;margin:8px 0}.age{font-weight:800;color:#1b6b50}.class-card p,.program p{color:#69736f;margin:12px 0}.time{border-top:1px solid #ece8df;padding-top:13px;margin-top:20px}.time small{display:block;color:#8a918d;font-size:10px;letter-spacing:1px}.time strong{font-size:15px}
+.programs{background:#f0f4ef}.program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.program{min-height:190px}.icon{font-size:30px}
+.curriculum-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.curriculum-item{display:flex;gap:18px;padding:22px;background:white;border:1px solid #e7e2d8;border-radius:14px}.curriculum-item>span{color:#a46b27;font-weight:800}.curriculum-item h3{color:#173f35}.curriculum-item p{color:#69736f;font-size:14px}
+.focus{background:#173f35;color:white}.focus-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}.focus h2{color:white}.focus h2 span{color:#d9b27a}.focus .eyebrow{color:#d9b27a}.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.focus-list div{border:1px solid rgba(255,255,255,.18);padding:17px;border-radius:10px}.focus-list span{color:#d9b27a;font-weight:800;margin-right:10px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{min-height:210px;border-radius:15px;overflow:hidden;background:#dfe9e2;position:relative;display:grid;place-items:center}.gallery-item img{width:100%;height:100%;min-height:210px;object-fit:cover}.gallery-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;color:white;background:linear-gradient(transparent,rgba(0,0,0,.75))}.gallery-item figcaption span{display:block;font-size:12px;opacity:.8}.gallery-large{grid-column:span 2}
+.admission{background:#f0f4ef}.admission-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:start}.admission-info p{color:#606c66}.admission-points{display:grid;gap:12px;margin:25px 0}.admission-points span{color:#1b6b50;font-weight:900;margin-right:8px}.phone{display:inline-block;background:#173f35;color:white;padding:15px 18px;border-radius:10px}.phone small{display:block;opacity:.7}.phone strong{font-size:19px}
+.form{background:white;padding:28px;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.07)}.form h3{font-size:25px;color:#173f35}.form>p{color:#737b77;margin-bottom:20px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.group{margin-bottom:15px}.group label{display:block;font-size:12px;font-weight:800;margin-bottom:6px;color:#38453f}.group input,.group select,.group textarea{width:100%;padding:12px;border:1px solid #d9d6cf;border-radius:8px;font:inherit;background:#fff}.full{width:100%;border:0;cursor:pointer}.note{font-size:11px;color:#8a918d;text-align:center;margin-top:10px}
+.location{background:white}.location-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}.map{min-height:360px;border-radius:18px;overflow:hidden;background:#dfe9e2}.map iframe{width:100%;height:100%;min-height:360px;border:0}.contact{border-radius:18px;background:#f0f4ef;padding:30px}.contact-block{margin-bottom:23px}.contact-block small{display:block;color:#8a918d;font-size:10px;letter-spacing:1px}.contact-block p,.contact-block a{color:#33413b;font-weight:600}.actions{display:flex;gap:10px;flex-wrap:wrap}
+.cta{background:#a46b27;color:white;padding:55px 0}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{color:white;margin:0}.cta h2 span{color:#173f35}.light{background:white;color:#173f35;border:0}
+footer{background:#102e27;color:white;padding:50px 0 20px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}.footer-brand p{opacity:.7;margin-top:15px;max-width:320px}.footer-links{display:grid;align-content:start;gap:8px}.footer-links h4{margin-bottom:8px}.footer-links a,.footer-links span{opacity:.72;font-size:14px}.bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:18px;display:flex;justify-content:space-between;gap:15px;font-size:12px;opacity:.6}
+.float{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#1b6b50;color:white;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 25px rgba(0,0,0,.2);z-index:200}
+@media(max-width:850px){
+nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fbfaf6;padding:18px 4%;border-bottom:1px solid #ddd;flex-direction:column;align-items:stretch}.menu{display:block}.nav.open nav{display:flex}
+.hero-grid,.about-grid,.focus-box,.admission-grid,.location-grid{grid-template-columns:1fr}
+.quick-grid{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.class-card.featured{transform:none}.program-grid{grid-template-columns:1fr 1fr}.curriculum-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.gallery-large{grid-column:auto}.educator-card{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.cta-inner{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){.hero{padding:55px 0}.quick-grid,.program-grid,.row,.footer-grid{grid-template-columns:1fr}.hero-points{display:grid}.photo{height:300px}section{padding:65px 0}.bottom{flex-direction:column}}
+</style>
 </head>
-
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="site-header" id="top">
-
-    <div class="container nav-container">
-
-        <a href="#home" class="brand">
-
-            <div class="brand-mark">
-                IQ
-            </div>
-
-            <div class="brand-text">
-                <strong>IQRA</strong>
-                <span>Tuition Centre</span>
-            </div>
-
-        </a>
-
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-        <nav class="main-nav" id="mainNav">
-
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#educator" class="nav-link">Educator</a>
-            <a href="#classes" class="nav-link">Classes</a>
-            <a href="#programs" class="nav-link">Programs</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#admission" class="nav-link">Admission</a>
-            <a href="#contact" class="nav-link">Contact</a>
-
-            <a href="https://wa.me/919087476503"
-               target="_blank"
-               rel="noopener"
-               class="nav-whatsapp">
-                WhatsApp
-            </a>
-
-        </nav>
-
-    </div>
-
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <div class="logo-mark">IQ</div>
+      <div><span>IQRA</span><small>Tuition Centre</small></div>
+    </a>
+    <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#educator">Educator</a>
+      <a href="#classes">Classes</a><a href="#programs">Programs</a><a href="#gallery">Gallery</a>
+      <a href="#admission">Admission</a><a href="#contact">Contact</a>
+      <a class="wa" href="https://wa.me/919087476503" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
 </header>
 
-
 <main>
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero" id="home">
-
-    <div class="hero-pattern"></div>
-
-    <div class="container hero-grid">
-
-        <div class="hero-content reveal">
-
-            <div class="batch-badge">
-                <span class="badge-dot"></span>
-                2026–2027 BATCH
-            </div>
-
-            <p class="eyebrow">
-                LEARN FOR SERVE
-            </p>
-
-            <h1>
-                Education with
-                <span>Values, Skills</span>
-                & Excellence.
-            </h1>
-
-            <p class="hero-description">
-                IQRA Tuition Centre welcomes boys and girls into a supportive
-                learning environment combining academic education, Islamic
-                studies, practical science, technology and career-oriented skills.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#classes" class="btn btn-primary">
-                    Explore Classes
-                    <span>→</span>
-                </a>
-
-                <a href="#admission" class="btn btn-outline">
-                    Enquire Now
-                </a>
-
-            </div>
-
-            <div class="hero-features">
-
-                <div>
-                    <span class="feature-icon">▣</span>
-                    <strong>Academic Support</strong>
-                </div>
-
-                <div>
-                    <span class="feature-icon">☾</span>
-                    <strong>Islamic Studies</strong>
-                </div>
-
-                <div>
-                    <span class="feature-icon">⌘</span>
-                    <strong>Future Skills</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-card reveal">
-
-            <div class="hero-photo">
-
-                <img src="images/teacher.jpg"
-                     alt="Dr. Noorudeen P., Ph.D.">
-
-                <div class="photo-label">
-
-                    <span>IQRA INCUBATION CENTRE</span>
-
-                    <strong>
-                        Learn. Grow. Serve.
-                    </strong>
-
-                </div>
-
-            </div>
-
-            <div class="hero-card-bottom">
-
-                <div>
-                    <small>Coordinator</small>
-                    <strong>Dr. Noorudeen P., Ph.D.</strong>
-                </div>
-
-                <a href="#educator" aria-label="Meet our educator">
-                    →
-                </a>
-
-            </div>
-
-        </div>
-
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">2026–2027 BATCH</div>
+      <p class="eyebrow">LEARN FOR SERVE</p>
+      <h1>Education with <span>Values, Skills</span> & Excellence.</h1>
+      <p class="lead">IQRA Tuition Centre welcomes boys and girls into a supportive learning environment combining academic education, Islamic studies, practical science, technology and career-oriented skills.</p>
+      <div class="buttons"><a class="btn primary" href="#classes">Explore Classes →</a><a class="btn outline" href="#admission">Enquire Now</a></div>
+      <div class="hero-points"><span>✓ Academic Support</span><span>✓ Islamic Studies</span><span>✓ Future Skills</span></div>
     </div>
-
+    <div class="hero-card">
+      <div class="photo">
+        <img src="images/teacher.jpg" alt="IQRA educator" onerror="this.style.display='none'">
+        <div class="photo-text">IQRA INCUBATION CENTRE<br>Learn. Grow. Serve.</div>
+      </div>
+      <div class="card-caption"><small>Coordinator</small><strong>Dr. Noorudeen P., Ph.D.</strong></div>
+    </div>
+  </div>
 </section>
 
+<section class="quick"><div class="container quick-grid">
+  <div class="quick-item"><small>BATCH</small><strong>2026–2027</strong></div>
+  <div class="quick-item"><small>STUDENTS</small><strong>Boys & Girls</strong></div>
+  <div class="quick-item"><small>LOCATION</small><strong>Melvisharam</strong></div>
+  <div class="quick-item"><small>ENQUIRIES</small><strong>90874 76503</strong></div>
+</div></section>
 
-<!-- =========================
-     QUICK INFO
-========================= -->
+<section class="about" id="about"><div class="container">
+  <div class="section-head"><p class="eyebrow">ABOUT IQRA</p><h2>Learning that prepares students for <span>life.</span></h2><p>IQRA Tuition Centre brings academic learning, Islamic values, practical education and future-oriented skills together in one supportive learning environment.</p></div>
+  <div class="about-grid">
+    <div class="image-box"><img src="images/centre.jpg" alt="IQRA Tuition Centre" onerror="this.style.display='none'"><div class="image-fallback">IQRA Tuition Centre<br>Melvisharam</div></div>
+    <div class="about-text"><h2>Education with purpose.</h2><p>IQRA Tuition Centre welcomes boys and girls with a focus on academic education, Islamic studies, practical science, technology and career-oriented learning.</p><p>The centre's programmes are designed around concept clarity, personal attention, practical learning, future skills and student development.</p><div class="checks"><div><span>✓</span>Academic & Islamic Education</div><div><span>✓</span>Personal Attention</div><div><span>✓</span>Practical Learning</div><div><span>✓</span>Future Skills</div></div></div>
+  </div>
+</div></section>
 
-<section class="quick-info">
+<section class="educator" id="educator"><div class="container">
+  <div class="educator-card">
+    <div class="teacher-photo"><img src="images/teacher.jpg" alt="IQRA educator" onerror="this.style.display='none'"><div class="teacher-fallback">IQRA<br>Educator</div></div>
+    <div><p class="eyebrow">MEET OUR EDUCATOR</p><h2>Dr. Noorudeen P., Ph.D.</h2><p class="role">AI Trainer • Mentor • Teacher • Coordinator</p><p>Coordinator of IQRA Incubation Centre, supporting students through academic education, technology, practical learning, mentoring and future-oriented skills.</p><div class="tags"><span>AI Training</span><span>Mentoring</span><span>Teaching</span><span>Future Skills</span></div></div>
+  </div>
+</div></section>
 
-    <div class="container quick-grid">
+<section id="classes"><div class="container">
+  <div class="section-head"><p class="eyebrow">CLASSES & TIMINGS</p><h2>Programmes for different <span>learning stages.</span></h2><p>Choose the programme that matches your child's current learning stage and educational needs.</p></div>
+  <div class="cards">
+    <article class="class-card"><span class="number">01</span><h3>🧸 Play School</h3><div class="age">2.5 – 5 Years</div><p>Play-based early learning with language development, activities and foundational skills.</p><div class="time"><small>TIME</small><strong>9:30 AM – 12:30 PM</strong></div></article>
+    <article class="class-card featured"><span class="number">02</span><h3>👦 Boys Class</h3><div class="age">Grade 1 – 12</div><p>Academic and Islamic education with support for competitive exams and future learning.</p><div class="time"><small>TIME</small><strong>6:30 PM – 8:30 PM</strong></div></article>
+    <article class="class-card"><span class="number">03</span><h3>👧 Girls Class</h3><div class="age">Grade 1 – 10</div><p>Academic and Islamic education with language development, science activities and practical learning.</p><div class="time"><small>TIME</small><strong>4:30 PM – 6:00 PM</strong></div></article>
+  </div>
+</div></section>
 
-        <div class="quick-item reveal">
-            <span class="quick-icon">2026</span>
-            <div>
-                <small>BATCH</small>
-                <strong>2026–2027</strong>
-            </div>
-        </div>
+<section class="programs" id="programs"><div class="container">
+  <div class="section-head"><p class="eyebrow">WHAT WE OFFER</p><h2>More than tuition. <span>A complete learning environment.</span></h2></div>
+  <div class="program-grid">
+    <article class="program"><div class="icon">📚</div><h3>Academic & Islamic Studies</h3><p>School subjects combined with Islamic education and values.</p></article>
+    <article class="program"><div class="icon">🚀</div><h3>NEET, JEE & TNPSC</h3><p>Competitive-exam oriented learning and academic support.</p></article>
+    <article class="program"><div class="icon">💻</div><h3>Computer Skills</h3><p>Basic MS Word, Excel and PowerPoint skills.</p></article>
+    <article class="program"><div class="icon">🗣️</div><h3>LSRW Language Training</h3><p>Listening, Speaking, Reading and Writing development.</p></article>
+    <article class="program"><div class="icon">🤖</div><h3>AI & Coding Skills</h3><p>Advanced technology-oriented learning for future skills.</p></article>
+    <article class="program"><div class="icon">🔬</div><h3>Science Projects</h3><p>Practical science learning, project guidance and Science Expo.</p></article>
+    <article class="program"><div class="icon">📖</div><h3>Quran Hifz</h3><p>Quran Hifz course alongside academic teaching.</p></article>
+    <article class="program"><div class="icon">🎯</div><h3>Mentorship & Career Guidance</h3><p>Mentorship, motivation and guidance for future academic goals.</p></article>
+  </div>
+</div></section>
 
-        <div class="quick-item reveal">
-            <span class="quick-icon">👥</span>
-            <div>
-                <small>STUDENTS</small>
-                <strong>Boys & Girls</strong>
-            </div>
-        </div>
+<section><div class="container">
+  <div class="section-head"><p class="eyebrow">LEARNING AREAS</p><h2>Building strong <span>foundations.</span></h2></div>
+  <div class="curriculum-grid">
+    <div class="curriculum-item"><span>01</span><div><h3>Islamic Studies</h3><p>Namaz, Wazu, Duas, Sunnah practices, Quran recitation and Tajweed.</p></div></div>
+    <div class="curriculum-item"><span>02</span><div><h3>English</h3><p>Letter recognition, writing, reading, tracing and activity-based learning.</p></div></div>
+    <div class="curriculum-item"><span>03</span><div><h3>Mathematics</h3><p>Number formation, colouring, shape matching and tracing.</p></div></div>
+    <div class="curriculum-item"><span>04</span><div><h3>Tamil</h3><p>Basic Tamil letter recognition and activity-based learning for young learners.</p></div></div>
+    <div class="curriculum-item"><span>05</span><div><h3>Science</h3><p>Concept-based exploration, project guidance and Science Expo participation.</p></div></div>
+    <div class="curriculum-item"><span>06</span><div><h3>Computer Skills</h3><p>Basic MS Word, Excel and PowerPoint.</p></div></div>
+    <div class="curriculum-item"><span>07</span><div><h3>Language Training</h3><p>Listening, Speaking, Reading and Writing.</p></div></div>
+    <div class="curriculum-item"><span>08</span><div><h3>Career Guidance</h3><p>Mentorship, motivation and support for NEET, JEE and TNPSC preparation.</p></div></div>
+  </div>
+</div></section>
 
-        <div class="quick-item reveal">
-            <span class="quick-icon">⌖</span>
-            <div>
-                <small>LOCATION</small>
-                <strong>Melvisharam</strong>
-            </div>
-        </div>
+<section class="focus"><div class="container focus-box">
+  <div><p class="eyebrow">OUR FOCUS</p><h2>Helping students <span>learn with purpose.</span></h2></div>
+  <div class="focus-list"><div><span>01</span>Concept Clarity</div><div><span>02</span>Personal Attention</div><div><span>03</span>Better Results</div><div><span>04</span>Practical Learning</div><div><span>05</span>Future Skills</div><div><span>06</span>Supportive Environment</div></div>
+</div></section>
 
-        <div class="quick-item reveal">
-            <span class="quick-icon">☎</span>
-            <div>
-                <small>ENQUIRIES</small>
-                <strong>90874 76503</strong>
-            </div>
-        </div>
+<section id="gallery"><div class="container">
+  <div class="section-head"><p class="eyebrow">OUR GALLERY</p><h2>Learning in <span>action.</span></h2><p>Add your centre, classroom, student, science project and event photos to the images folder when available.</p></div>
+  <div class="gallery-grid">
+    <figure class="gallery-item gallery-large"><img src="images/centre.jpg" alt="IQRA centre" onerror="this.style.display='none'"><figcaption><strong>Our Centre</strong><span>IQRA Tuition Centre</span></figcaption></figure>
+    <figure class="gallery-item"><img src="images/classroom.jpg" alt="Classroom" onerror="this.style.display='none'"><figcaption><strong>Classroom</strong><span>Learning environment</span></figcaption></figure>
+    <figure class="gallery-item"><img src="images/students.jpg" alt="Students" onerror="this.style.display='none'"><figcaption><strong>Students</strong><span>Learning together</span></figcaption></figure>
+    <figure class="gallery-item"><img src="images/science.jpg" alt="Science project" onerror="this.style.display='none'"><figcaption><strong>Science Projects</strong><span>Practical learning</span></figcaption></figure>
+    <figure class="gallery-item"><img src="images/events.jpg" alt="Events" onerror="this.style.display='none'"><figcaption><strong>Events & Activities</strong><span>Student experiences</span></figcaption></figure>
+  </div>
+</div></section>
 
+<section class="admission" id="admission"><div class="container admission-grid">
+  <div class="admission-info"><p class="eyebrow">ADMISSION & ENQUIRY</p><h2>Take the next step for your child's <span>education.</span></h2><p>Fill in the enquiry form and your details will be prepared as a WhatsApp message for the IQRA Tuition Centre team.</p><div class="admission-points"><div>✓ 2026–2027 Batch</div><div>✓ Boys & Girls</div><div>✓ Academic & Islamic Education</div><div>✓ Future Skills & Career Guidance</div></div><a class="phone" href="tel:+919087476503"><small>Call for Enquiries</small><strong>+91 90874 76503</strong></a></div>
+  <div class="form"><h3>Admission Enquiry</h3><p>Please provide the following details.</p>
+    <form id="admissionForm">
+      <div class="row"><div class="group"><label>Student Name *</label><input id="studentName" required></div><div class="group"><label>Parent / Guardian *</label><input id="parentName" required></div></div>
+      <div class="row"><div class="group"><label>Phone / WhatsApp *</label><input id="phoneInput" type="tel" required></div><div class="group"><label>Class / Grade *</label><select id="classGrade" required><option value="">Select class</option><option>Play School</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select></div></div>
+      <div class="row"><div class="group"><label>Gender *</label><select id="gender" required><option value="">Select</option><option>Boy</option><option>Girl</option></select></div><div class="group"><label>Preferred Timing</label><select id="timing"><option value="">Select timing</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div></div>
+      <div class="group"><label>Course / Programme *</label><select id="course" required><option value="">Select programme</option><option>Play School</option><option>Academic & Islamic Studies</option><option>Quran Hifz</option><option>NEET Coaching</option><option>JEE Coaching</option><option>TNPSC Coaching</option><option>Computer Skills</option><option>LSRW Language Training</option><option>AI & Coding</option><option>Science Projects</option><option>Mentorship & Career Guidance</option><option>Other</option></select></div>
+      <div class="group"><label>Message / Enquiry</label><textarea id="message" rows="4"></textarea></div>
+      <button class="btn primary full" type="submit">Send Enquiry on WhatsApp →</button><p class="note">Your enquiry will open in WhatsApp with the details you provide.</p>
+    </form>
+  </div>
+</div></section>
+
+<section class="location" id="contact"><div class="container">
+  <div class="section-head"><p class="eyebrow">FIND US</p><h2>Visit <span>IQRA Tuition Centre.</span></h2><p>Opposite to Madina Masjid, Melvisharam, Ranipet District, Tamil Nadu.</p></div>
+  <div class="location-grid">
+    <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7971879915544!2d79.2711002747136!3d12.920752915991754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3749b13d5ad5%3A0xcfd62c700ddd39c8!2sIQRA%20TUITION%20CENTRE!5e0!3m2!1sen!2sin!4v1790184740514!5m2!1sen!2sin" loading="lazy" allowfullscreen title="IQRA Tuition Centre location"></iframe></div>
+    <div class="contact">
+      <div class="contact-block"><small>ADDRESS</small><p>Opposite to Madina Masjid, First Floor, 3rd Shop, Melvisharam – 632 509, Ranipet District, Tamil Nadu.</p></div>
+      <div class="contact-block"><small>PHONE</small><a href="tel:+919087476503">+91 90874 76503</a></div>
+      <div class="contact-block"><small>EMAIL</small><a href="mailto:noorudeen.che@gmail.com">noorudeen.che@gmail.com</a></div>
+      <div class="actions"><a class="btn primary" href="https://wa.me/919087476503" target="_blank" rel="noopener">WhatsApp Us</a><a class="btn outline" href="tel:+919087476503">Call Now</a></div>
     </div>
+  </div>
+</div></section>
 
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="section about-section" id="about">
-
-    <div class="container">
-
-        <div class="section-heading centered reveal">
-
-            <p class="eyebrow">ABOUT IQRA</p>
-
-            <h2>
-                Learning that prepares
-                students for <span>life.</span>
-            </h2>
-
-            <p>
-                IQRA Tuition Centre brings academic learning, Islamic values,
-                practical education and future-oriented skills together in one
-                supportive learning environment.
-            </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div class="about-image reveal">
-
-                <img src="images/centre.jpg"
-                     alt="IQRA Tuition Centre">
-
-                <div class="image-caption">
-                    <strong>IQRA Tuition Centre</strong>
-                    <span>Melvisharam</span>
-                </div>
-
-            </div>
-
-
-            <div class="about-content reveal">
-
-                <h3>
-                    Education with purpose.
-                </h3>
-
-                <p>
-                    IQRA Tuition Centre welcomes boys and girls with a focus on
-                    academic education, Islamic studies, practical science,
-                    technology and career-oriented learning.
-                </p>
-
-                <p>
-                    The centre's programmes are designed around concept clarity,
-                    personal attention, practical learning, future skills and
-                    student development.
-                </p>
-
-                <div class="about-points">
-
-                    <div>
-                        <span>✓</span>
-                        <strong>Academic & Islamic Education</strong>
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        <strong>Personal Attention</strong>
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        <strong>Practical Learning</strong>
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        <strong>Future Skills</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     EDUCATOR
-========================= -->
-
-<section class="section educator-section" id="educator">
-
-    <div class="container">
-
-        <div class="educator-card reveal">
-
-            <div class="educator-photo">
-
-                <img src="images/teacher.jpg"
-                     alt="Dr. Noorudeen P., Ph.D.">
-
-            </div>
-
-            <div class="educator-content">
-
-                <p class="eyebrow">
-                    MEET OUR EDUCATOR
-                </p>
-
-                <h2>
-                    Dr. Noorudeen P., Ph.D.
-                </h2>
-
-                <p class="educator-role">
-                    AI Trainer • Mentor • Teacher • Coordinator
-                </p>
-
-                <p>
-                    Coordinator of IQRA Incubation Centre, supporting students
-                    through academic education, technology, practical learning,
-                    mentoring and future-oriented skills.
-                </p>
-
-                <div class="educator-tags">
-
-                    <span>AI Training</span>
-                    <span>Mentoring</span>
-                    <span>Teaching</span>
-                    <span>Future Skills</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CLASSES
-========================= -->
-
-<section class="section classes-section" id="classes">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div>
-                <p class="eyebrow">CLASSES & TIMINGS</p>
-
-                <h2>
-                    Programmes for different
-                    <span>learning stages.</span>
-                </h2>
-            </div>
-
-            <p>
-                Choose the programme that matches your child's current learning
-                stage and educational needs.
-            </p>
-
-        </div>
-
-
-        <div class="class-grid">
-
-            <!-- Play School -->
-
-            <article class="class-card reveal">
-
-                <div class="class-number">
-                    01
-                </div>
-
-                <div class="class-icon">
-                    🧸
-                </div>
-
-                <p class="class-label">
-                    EARLY LEARNING
-                </p>
-
-                <h3>
-                    Play School
-                </h3>
-
-                <div class="class-age">
-                    2.5 – 5 Years
-                </div>
-
-                <p>
-                    Play-based early learning with language development,
-                    activities and foundational skills.
-                </p>
-
-                <div class="class-time">
-                    <span>TIME</span>
-                    <strong>9:30 AM – 12:30 PM</strong>
-                </div>
-
-            </article>
-
-
-            <!-- Boys -->
-
-            <article class="class-card featured reveal">
-
-                <div class="class-number">
-                    02
-                </div>
-
-                <div class="class-icon">
-                    👦
-                </div>
-
-                <p class="class-label">
-                    ACADEMIC + ISLAMIC
-                </p>
-
-                <h3>
-                    Boys Class
-                </h3>
-
-                <div class="class-age">
-                    Grade 1 – 12
-                </div>
-
-                <p>
-                    Academic and Islamic education with support for competitive
-                    exams and future learning.
-                </p>
-
-                <div class="class-time">
-                    <span>TIME</span>
-                    <strong>6:30 PM – 8:30 PM</strong>
-                </div>
-
-            </article>
-
-
-            <!-- Girls -->
-
-            <article class="class-card reveal">
-
-                <div class="class-number">
-                    03
-                </div>
-
-                <div class="class-icon">
-                    👧
-                </div>
-
-                <p class="class-label">
-                    ACADEMIC + ISLAMIC
-                </p>
-
-                <h3>
-                    Girls Class
-                </h3>
-
-                <div class="class-age">
-                    Grade 1 – 10
-                </div>
-
-                <p>
-                    Academic and Islamic education with language development,
-                    science activities and practical learning.
-                </p>
-
-                <div class="class-time">
-                    <span>TIME</span>
-                    <strong>4:30 PM – 6:00 PM</strong>
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROGRAMS
-========================= -->
-
-<section class="section programs-section" id="programs">
-
-    <div class="container">
-
-        <div class="section-heading centered reveal">
-
-            <p class="eyebrow">WHAT WE OFFER</p>
-
-            <h2>
-                More than tuition.
-                <span>A complete learning environment.</span>
-            </h2>
-
-            <p>
-                Academic learning is supported by Islamic studies, practical
-                activities, technology and career-oriented programmes.
-            </p>
-
-        </div>
-
-
-        <div class="program-grid">
-
-            <article class="program-card reveal">
-                <span class="program-icon">📚</span>
-                <h3>Academic & Islamic Studies</h3>
-                <p>
-                    School subjects combined with Islamic education and values.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">🚀</span>
-                <h3>NEET, JEE & TNPSC</h3>
-                <p>
-                    Competitive-exam oriented learning and academic support.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">💻</span>
-                <h3>Computer Skills</h3>
-                <p>
-                    Basic MS Word, Excel and PowerPoint skills.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">🗣️</span>
-                <h3>LSRW Language Training</h3>
-                <p>
-                    Listening, Speaking, Reading and Writing development.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">🤖</span>
-                <h3>AI & Coding Skills</h3>
-                <p>
-                    Advanced technology-oriented learning for future skills.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">🔬</span>
-                <h3>Science Projects</h3>
-                <p>
-                    Practical science learning, project guidance and Science Expo.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">📖</span>
-                <h3>Quran Hifz</h3>
-                <p>
-                    Quran Hifz course alongside academic teaching.
-                </p>
-            </article>
-
-            <article class="program-card reveal">
-                <span class="program-icon">🎯</span>
-                <h3>Mentorship & Career Guidance</h3>
-                <p>
-                    Mentorship, motivation and guidance for future academic goals.
-                </p>
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CURRICULUM
-========================= -->
-
-<section class="section curriculum-section">
-
-    <div class="container">
-
-        <div class="section-heading centered reveal">
-
-            <p class="eyebrow">LEARNING AREAS</p>
-
-            <h2>
-                Building strong
-                <span>foundations.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="curriculum-grid">
-
-            <div class="curriculum-item reveal">
-                <span>01</span>
-                <div>
-                    <h3>Islamic Studies</h3>
-                    <p>
-                        Namaz, Wazu, Duas, Sunnah practices, Quran recitation
-                        and Tajweed.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>02</span>
-                <div>
-                    <h3>English</h3>
-                    <p>
-                        Letter recognition, writing, reading, tracing and
-                        activity-based learning.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>03</span>
-                <div>
-                    <h3>Mathematics</h3>
-                    <p>
-                        Number formation, colouring, shape matching and tracing.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>04</span>
-                <div>
-                    <h3>Tamil</h3>
-                    <p>
-                        Basic Tamil letter recognition and activity-based
-                        learning for young learners.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>05</span>
-                <div>
-                    <h3>Science</h3>
-                    <p>
-                        Concept-based exploration, project guidance and Science
-                        Expo participation.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>06</span>
-                <div>
-                    <h3>Computer Skills</h3>
-                    <p>
-                        Basic MS Word, Excel and PowerPoint.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>07</span>
-                <div>
-                    <h3>Language Training</h3>
-                    <p>
-                        Listening, Speaking, Reading and Writing.
-                    </p>
-                </div>
-            </div>
-
-            <div class="curriculum-item reveal">
-                <span>08</span>
-                <div>
-                    <h3>Career Guidance</h3>
-                    <p>
-                        Mentorship, motivation and support for NEET, JEE and
-                        TNPSC preparation.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOCUS
-========================= -->
-
-<section class="section focus-section">
-
-    <div class="container">
-
-        <div class="focus-box reveal">
-
-            <div class="focus-heading">
-
-                <p class="eyebrow">
-                    OUR FOCUS
-                </p>
-
-                <h2>
-                    Helping students
-                    <span>learn with purpose.</span>
-                </h2>
-
-            </div>
-
-            <div class="focus-list">
-
-                <div>
-                    <span>01</span>
-                    Concept Clarity
-                </div>
-
-                <div>
-                    <span>02</span>
-                    Personal Attention
-                </div>
-
-                <div>
-                    <span>03</span>
-                    Better Results
-                </div>
-
-                <div>
-                    <span>04</span>
-                    Practical Learning
-                </div>
-
-                <div>
-                    <span>05</span>
-                    Future Skills
-                </div>
-
-                <div>
-                    <span>06</span>
-                    Supportive Environment
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section class="section gallery-section" id="gallery">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <div>
-                <p class="eyebrow">OUR GALLERY</p>
-
-                <h2>
-                    Learning in
-                    <span>action.</span>
-                </h2>
-            </div>
-
-            <p>
-                A glimpse into the learning environment, activities and
-                practical experiences at IQRA.
-            </p>
-
-        </div>
-
-
-        <div class="gallery-grid">
-
-            <figure class="gallery-item gallery-large reveal">
-
-                <img src="images/centre.jpg"
-                     alt="IQRA Tuition Centre building"
-                     loading="lazy">
-
-                <figcaption>
-                    <strong>Our Centre</strong>
-                    <span>IQRA Tuition Centre</span>
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item reveal">
-
-                <img src="images/classroom.jpg"
-                     alt="IQRA classroom"
-                     loading="lazy">
-
-                <figcaption>
-                    <strong>Classroom</strong>
-                    <span>Learning environment</span>
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item reveal">
-
-                <img src="images/students.jpg"
-                     alt="IQRA students"
-                     loading="lazy">
-
-                <figcaption>
-                    <strong>Students</strong>
-                    <span>Learning together</span>
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item reveal">
-
-                <img src="images/science.jpg"
-                     alt="IQRA science project"
-                     loading="lazy">
-
-                <figcaption>
-                    <strong>Science Projects</strong>
-                    <span>Practical learning</span>
-                </figcaption>
-
-            </figure>
-
-
-            <figure class="gallery-item reveal">
-
-                <img src="images/events.jpg"
-                     alt="IQRA event"
-                     loading="lazy">
-
-                <figcaption>
-                    <strong>Events & Activities</strong>
-                    <span>Student experiences</span>
-                </figcaption>
-
-            </figure>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ADMISSION
-========================= -->
-
-<section class="section admission-section" id="admission">
-
-    <div class="container admission-grid">
-
-        <div class="admission-info reveal">
-
-            <p class="eyebrow">
-                ADMISSION & ENQUIRY
-            </p>
-
-            <h2>
-                Take the next step
-                for your child's <span>education.</span>
-            </h2>
-
-            <p>
-                Fill in the enquiry form and your details will be prepared
-                as a WhatsApp message for the IQRA Tuition Centre team.
-            </p>
-
-            <div class="admission-points">
-
-                <div>
-                    <span>✓</span>
-                    2026–2027 Batch
-                </div>
-
-                <div>
-                    <span>✓</span>
-                    Boys & Girls
-                </div>
-
-                <div>
-                    <span>✓</span>
-                    Academic & Islamic Education
-                </div>
-
-                <div>
-                    <span>✓</span>
-                    Future Skills & Career Guidance
-                </div>
-
-            </div>
-
-            <a href="tel:+919087476503" class="phone-box">
-
-                <span>Call for Enquiries</span>
-
-                <strong>
-                    +91 90874 76503
-                </strong>
-
-            </a>
-
-        </div>
-
-
-        <div class="form-card reveal">
-
-            <form id="admissionForm">
-
-                <div class="form-heading">
-
-                    <h3>
-                        Admission Enquiry
-                    </h3>
-
-                    <p>
-                        Please provide the following details.
-                    </p>
-
-                </div>
-
-
-                <div class="form-row">
-
-                    <div class="form-group">
-
-                        <label for="studentName">
-                            Student Name *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="studentName"
-                            name="studentName"
-                            placeholder="Enter student name"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="parentName">
-                            Parent / Guardian *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="parentName"
-                            name="parentName"
-                            placeholder="Enter parent name"
-                            required>
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-row">
-
-                    <div class="form-group">
-
-                        <label for="phone">
-                            Phone / WhatsApp *
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Enter phone number"
-                            required>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="classGrade">
-                            Class / Grade *
-                        </label>
-
-                        <select id="classGrade"
-                                name="classGrade"
-                                required>
-
-                            <option value="">Select class</option>
-                            <option>Play School</option>
-                            <option>Grade 1</option>
-                            <option>Grade 2</option>
-                            <option>Grade 3</option>
-                            <option>Grade 4</option>
-                            <option>Grade 5</option>
-                            <option>Grade 6</option>
-                            <option>Grade 7</option>
-                            <option>Grade 8</option>
-                            <option>Grade 9</option>
-                            <option>Grade 10</option>
-                            <option>Grade 11</option>
-                            <option>Grade 12</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-row">
-
-                    <div class="form-group">
-
-                        <label for="gender">
-                            Gender *
-                        </label>
-
-                        <select id="gender"
-                                name="gender"
-                                required>
-
-                            <option value="">Select</option>
-                            <option>Boy</option>
-                            <option>Girl</option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="timing">
-                            Preferred Timing
-                        </label>
-
-                        <select id="timing"
-                                name="timing">
-
-                            <option value="">Select timing</option>
-                            <option>Morning</option>
-                            <option>Afternoon</option>
-                            <option>Evening</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="course">
-                        Course / Programme *
-                    </label>
-
-                    <select id="course"
-                            name="course"
-                            required>
-
-                        <option value="">Select programme</option>
-
-                        <option>Play School</option>
-                        <option>Academic & Islamic Studies</option>
-                        <option>Quran Hifz</option>
-                        <option>NEET Coaching</option>
-                        <option>JEE Coaching</option>
-                        <option>TNPSC Coaching</option>
-                        <option>Computer Skills</option>
-                        <option>LSRW Language Training</option>
-                        <option>AI & Coding</option>
-                        <option>Science Projects</option>
-                        <option>Mentorship & Career Guidance</option>
-                        <option>Other</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="message">
-                        Message / Enquiry
-                    </label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        placeholder="Write your enquiry..."></textarea>
-
-                </div>
-
-
-                <button type="submit"
-                        class="btn btn-primary btn-full">
-
-                    Send Enquiry on WhatsApp
-                    <span>→</span>
-
-                </button>
-
-                <p class="form-note">
-                    Your enquiry will open in WhatsApp with the details you provide.
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     LOCATION
-========================= -->
-
-<section class="section location-section" id="contact">
-
-    <div class="container">
-
-        <div class="section-heading centered reveal">
-
-            <p class="eyebrow">FIND US</p>
-
-            <h2>
-                Visit <span>IQRA Tuition Centre.</span>
-            </h2>
-
-            <p>
-                We are located in Melvisharam, Ranipet District, Tamil Nadu.
-            </p>
-
-        </div>
-
-
-        <div class="location-grid">
-
-            <div class="map-wrapper reveal">
-
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7971879915544!2d79.2711002747136!3d12.920752915991754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3749b13d5ad5%3A0xcfd62c700ddd39c8!2sIQRA%20TUITION%20CENTRE!5e0!3m2!1sen!2sin!4v1790184740514!5m2!1sen!2sin"
-                    loading="lazy"
-                    allowfullscreen
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    title="IQRA Tuition Centre location">
-                </iframe>
-
-            </div>
-
-
-            <div class="contact-card reveal">
-
-                <div class="contact-block">
-
-                    <span class="contact-icon">⌖</span>
-
-                    <div>
-
-                        <small>ADDRESS</small>
-
-                        <p>
-                            Opposite to Madina Masjid,
-                            First Floor, 3rd Shop,
-                            Melvisharam – 632 509,
-                            Ranipet District, Tamil Nadu.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-block">
-
-                    <span class="contact-icon">☎</span>
-
-                    <div>
-
-                        <small>PHONE</small>
-
-                        <a href="tel:+919087476503">
-                            +91 90874 76503
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-block">
-
-                    <span class="contact-icon">✉</span>
-
-                    <div>
-
-                        <small>EMAIL</small>
-
-                        <a href="mailto:noorudeen.che@gmail.com">
-                            noorudeen.che@gmail.com
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-actions">
-
-                    <a href="https://wa.me/919087476503"
-                       target="_blank"
-                       rel="noopener"
-                       class="btn btn-whatsapp">
-
-                        WhatsApp Us
-
-                    </a>
-
-                    <a href="tel:+919087476503"
-                       class="btn btn-outline-dark">
-
-                        Call Now
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FINAL CTA
-========================= -->
-
-<section class="final-cta">
-
-    <div class="container final-cta-inner reveal">
-
-        <div>
-
-            <p class="eyebrow">
-                IQRA TUITION CENTRE
-            </p>
-
-            <h2>
-                It's time to ensure a
-                <span>proper education</span>
-                for your child.
-            </h2>
-
-        </div>
-
-        <a href="#admission" class="btn btn-light">
-            Start an Enquiry →
-        </a>
-
-    </div>
-
-</section>
-
+<section class="cta"><div class="container cta-inner"><h2>It's time to ensure a <span>proper education</span> for your child.</h2><a class="btn light" href="#admission">Start an Enquiry →</a></div></section>
 </main>
 
+<footer><div class="container footer-grid">
+  <div class="footer-brand"><div class="logo"><div class="logo-mark">IQ</div><div><span style="color:white">IQRA</span><small style="color:#9eaaa5">Tuition Centre</small></div></div><p>Learn for Serve. Education with Values, Skills & Excellence.</p></div>
+  <div class="footer-links"><h4>Quick Links</h4><a href="#about">About</a><a href="#classes">Classes</a><a href="#programs">Programs</a><a href="#admission">Admission</a></div>
+  <div class="footer-links"><h4>Contact</h4><a href="tel:+919087476503">+91 90874 76503</a><a href="mailto:noorudeen.che@gmail.com">noorudeen.che@gmail.com</a><span>Melvisharam, Tamil Nadu</span></div>
+  <div class="footer-links"><h4>Connect</h4><a href="https://wa.me/919087476503">WhatsApp</a><a href="#contact">Find Us</a></div>
+</div><div class="container bottom"><span>© <span id="year"></span> IQRA Tuition Centre. All rights reserved.</span><span>IQRA Incubation Centre</span></div></footer>
+<a class="float" href="https://wa.me/919087476503" target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const menu=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('admissionForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const msg =
+`IQRA Tuition Centre - Admission Enquiry
 
-<footer class="site-footer">
-
-    <div class="container footer-grid">
-
-        <div class="footer-brand">
-
-            <a href="#home" class="brand footer-brand-link">
-
-                <div class="brand-mark">
-                    IQ
-                </div>
-
-                <div class="brand-text">
-                    <strong>IQRA</strong>
-                    <span>Tuition Centre</span>
-                </div>
-
-            </a>
-
-            <p>
-                Learn for Serve.
-                Education with Values, Skills & Excellence.
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <h4>Quick Links</h4>
-
-            <a href="#about">About</a>
-            <a href="#educator">Educator</a>
-            <a href="#classes">Classes</a>
-            <a href="#programs">Programs</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#admission">Admission</a>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <h4>Contact</h4>
-
-            <a href="tel:+919087476503">
-                +91 90874 76503
-            </a>
-
-            <a href="mailto:noorudeen.che@gmail.com">
-                noorudeen.che@gmail.com
-            </a>
-
-            <span>
-                Melvisharam, Tamil Nadu
-            </span>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <h4>Connect</h4>
-
-            <a href="https://wa.me/919087476503"
-               target="_blank"
-               rel="noopener">
-                WhatsApp
-            </a>
-
-            <a href="#admission">
-                Admission Enquiry
-            </a>
-
-            <a href="#contact">
-                Find Us
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-        <p>
-            © <span id="currentYear"></span> IQRA Tuition Centre.
-            All rights reserved.
-        </p>
-
-        <p>
-            IQRA Incubation Centre
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================
-     FLOATING WHATSAPP
-========================= -->
-
-<a href="https://wa.me/919087476503"
-   class="floating-whatsapp"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat with IQRA Tuition Centre on WhatsApp">
-
-    <span>☏</span>
-
-</a>
-
-
-<!-- Website JavaScript -->
-<script src="js/script.js"></script>
-
+Student Name: ${document.getElementById('studentName').value}
+Parent / Guardian: ${document.getElementById('parentName').value}
+Phone / WhatsApp: ${document.getElementById('phoneInput').value}
+Class / Grade: ${document.getElementById('classGrade').value}
+Gender: ${document.getElementById('gender').value}
+Preferred Timing: ${document.getElementById('timing').value || 'Not specified'}
+Course / Programme: ${document.getElementById('course').value}
+Message: ${document.getElementById('message').value || 'No additional message'}`;
+  window.open('https://wa.me/919087476503?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
 </body>
 </html>

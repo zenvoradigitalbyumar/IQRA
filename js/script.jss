@@ -1,132 +1,41 @@
 /* =========================================
-   IQRA TUITION CENTRE
-   Main Website JavaScript
+   IQRA INCUBATION CENTRE
+   WEBSITE JAVASCRIPT
 ========================================= */
+
+
+/* =========================================
+   FOOTER YEAR
+========================================= */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
 
 /* =========================================
    MOBILE MENU
 ========================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const menuButton = document.getElementById("menuBtn");
+const navigation = document.getElementById("nav");
 
-if (menuToggle && mainNav) {
+if (menuButton && navigation) {
 
-    menuToggle.addEventListener("click", () => {
+  menuButton.addEventListener("click", function () {
+    navigation.classList.toggle("open");
+  });
 
-        const isOpen = mainNav.classList.toggle("open");
+  document.querySelectorAll("#nav a").forEach(function (link) {
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
+    link.addEventListener("click", function () {
+      navigation.classList.remove("open");
     });
 
-
-    // Close mobile menu when a navigation link is clicked
-
-    const navLinks = mainNav.querySelectorAll("a");
-
-    navLinks.forEach((link) => {
-
-        link.addEventListener("click", () => {
-
-            mainNav.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
-
+  });
 }
-
-
-/* =========================================
-   ACTIVE NAVIGATION
-========================================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navigationLinks = document.querySelectorAll(".nav-link");
-
-function updateActiveNavigation() {
-
-    const scrollPosition = window.scrollY + 150;
-
-    let currentSection = "";
-
-    sections.forEach((section) => {
-
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-        ) {
-            currentSection = section.getAttribute("id");
-        }
-
-    });
-
-
-    navigationLinks.forEach((link) => {
-
-        link.classList.remove("active");
-
-        const href = link.getAttribute("href");
-
-        if (href === `#${currentSection}`) {
-            link.classList.add("active");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", updateActiveNavigation);
-
-updateActiveNavigation();
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
 
 
 /* =========================================
@@ -137,178 +46,744 @@ const admissionForm = document.getElementById("admissionForm");
 
 if (admissionForm) {
 
-    admissionForm.addEventListener("submit", function (event) {
+  admissionForm.addEventListener("submit", function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
+
+    const studentName =
+      document.getElementById("studentName")?.value || "";
+
+    const parentName =
+      document.getElementById("parentName")?.value || "";
+
+    const phone =
+      document.getElementById("phoneInput")?.value || "";
+
+    const classGrade =
+      document.getElementById("classGrade")?.value || "";
+
+    const gender =
+      document.getElementById("gender")?.value || "";
+
+    const timing =
+      document.getElementById("timing")?.value ||
+      "Not specified";
+
+    const course =
+      document.getElementById("course")?.value || "";
+
+    const message =
+      document.getElementById("message")?.value ||
+      "No additional message";
 
 
-        const studentName =
-            document.getElementById("studentName").value.trim();
+    const whatsappMessage =
+`IQRA Incubation Centre - Admission Enquiry
 
-        const parentName =
-            document.getElementById("parentName").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const classGrade =
-            document.getElementById("classGrade").value;
-
-        const gender =
-            document.getElementById("gender").value;
-
-        const timing =
-            document.getElementById("timing").value || "Not specified";
-
-        const course =
-            document.getElementById("course").value;
-
-        const message =
-            document.getElementById("message").value.trim() ||
-            "No additional message";
-
-
-        const whatsappMessage = `Hello IQRA Tuition Centre,
-
-I would like to make an admission enquiry.
-
-*Student Details*
 Student Name: ${studentName}
 Parent / Guardian: ${parentName}
 Phone / WhatsApp: ${phone}
 Class / Grade: ${classGrade}
 Gender: ${gender}
-
-*Programme Details*
-Course / Programme: ${course}
 Preferred Timing: ${timing}
-
-*Message*
-${message}
-
-Thank you.`;
+Course / Programme: ${course}
+Message: ${message}`;
 
 
-        const encodedMessage =
-            encodeURIComponent(whatsappMessage);
+    const whatsappURL =
+      "https://wa.me/919087476503?text=" +
+      encodeURIComponent(whatsappMessage);
 
 
-        const whatsappURL =
-            `https://wa.me/919087476503?text=${encodedMessage}`;
+    window.open(
+      whatsappURL,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+  });
+}
 
 
-        window.open(
-            whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
+/* =========================================
+   GALLERY SLIDER
+========================================= */
+
+const gallerySlider =
+  document.querySelector(".gallery-slider");
+
+const slides =
+  document.querySelectorAll(".gallery-slide");
+
+const dotsContainer =
+  document.querySelector(".gallery-dots");
+
+const previousButton =
+  document.querySelector(".gallery-prev");
+
+const nextButton =
+  document.querySelector(".gallery-next");
+
+
+let currentSlide = 0;
+let autoSlide = null;
+
+
+if (
+  gallerySlider &&
+  slides.length &&
+  dotsContainer
+) {
+
+
+  /* =========================================
+     CREATE DOTS
+  ========================================= */
+
+  slides.forEach(function (slide, index) {
+
+    const dot =
+      document.createElement("button");
+
+    dot.type = "button";
+
+    dot.className =
+      "gallery-dot" +
+      (index === 0 ? " active" : "");
+
+    dot.setAttribute(
+      "aria-label",
+      "Go to gallery image " + (index + 1)
+    );
+
+
+    dot.addEventListener(
+      "click",
+      function () {
+
+        showSlide(index);
+
+        restartAutoSlide();
+
+      }
+    );
+
+
+    dotsContainer.appendChild(dot);
+
+  });
+
+
+  const dots =
+    document.querySelectorAll(".gallery-dot");
+
+
+  /* =========================================
+     SHOW SLIDE
+  ========================================= */
+
+  function showSlide(index) {
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+
+    slides.forEach(function (slide) {
+
+      slide.classList.remove("active");
 
     });
 
-}
+
+    dots.forEach(function (dot) {
+
+      dot.classList.remove("active");
+
+    });
 
 
-/* =========================================
-   CURRENT YEAR
-========================================= */
+    slides[index].classList.add("active");
 
-const currentYearElement =
-    document.getElementById("currentYear");
+    dots[index].classList.add("active");
 
-if (currentYearElement) {
+    currentSlide = index;
 
-    currentYearElement.textContent =
-        new Date().getFullYear();
-
-}
+  }
 
 
-/* =========================================
-   HEADER SHADOW ON SCROLL
-========================================= */
+  /* =========================================
+     NEXT / PREVIOUS
+  ========================================= */
 
-const header =
-    document.querySelector(".site-header");
+  function nextSlide() {
 
-function updateHeader() {
+    showSlide(currentSlide + 1);
 
-    if (!header) {
-        return;
+  }
+
+
+  function previousSlide() {
+
+    showSlide(currentSlide - 1);
+
+  }
+
+
+  /* =========================================
+     AUTOMATIC SLIDER
+  ========================================= */
+
+  function startAutoSlide() {
+
+    stopAutoSlide();
+
+    autoSlide = setInterval(
+      nextSlide,
+      4500
+    );
+
+  }
+
+
+  function stopAutoSlide() {
+
+    if (autoSlide) {
+
+      clearInterval(autoSlide);
+
+      autoSlide = null;
+
     }
 
-    if (window.scrollY > 30) {
+  }
 
-        header.style.boxShadow =
-            "0 8px 30px rgba(16, 32, 28, 0.08)";
 
-    } else {
+  function restartAutoSlide() {
 
-        header.style.boxShadow = "none";
+    stopAutoSlide();
 
+    startAutoSlide();
+
+  }
+
+
+  /* =========================================
+     BUTTONS
+  ========================================= */
+
+  if (nextButton) {
+
+    nextButton.addEventListener(
+      "click",
+      function () {
+
+        nextSlide();
+
+        restartAutoSlide();
+
+      }
+    );
+
+  }
+
+
+  if (previousButton) {
+
+    previousButton.addEventListener(
+      "click",
+      function () {
+
+        previousSlide();
+
+        restartAutoSlide();
+
+      }
+    );
+
+  }
+
+
+  /* =========================================
+     PAUSE ON DESKTOP HOVER
+  ========================================= */
+
+  gallerySlider.addEventListener(
+    "mouseenter",
+    stopAutoSlide
+  );
+
+
+  gallerySlider.addEventListener(
+    "mouseleave",
+    startAutoSlide
+  );
+
+
+  /* =========================================
+     MOBILE SWIPE
+  ========================================= */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+
+  gallerySlider.addEventListener(
+    "touchstart",
+    function (event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+      stopAutoSlide();
+
+    },
+    {
+      passive: true
     }
-
-}
-
-window.addEventListener("scroll", updateHeader);
-
-updateHeader();
+  );
 
 
-/* =========================================
-   IMAGE FALLBACK
-========================================= */
+  gallerySlider.addEventListener(
+    "touchend",
+    function (event) {
 
-const images =
-    document.querySelectorAll("img");
+      touchEndX =
+        event.changedTouches[0].screenX;
 
-images.forEach((image) => {
 
-    image.addEventListener("error", () => {
+      const swipeDistance =
+        touchEndX - touchStartX;
 
-        image.style.display = "none";
 
-        const parent =
-            image.closest(
-                ".gallery-item, .about-image, .hero-photo, .educator-photo"
-            );
+      if (Math.abs(swipeDistance) > 50) {
 
-        if (parent) {
+        if (swipeDistance < 0) {
 
-            parent.classList.add("image-missing");
+          nextSlide();
 
-            if (!parent.querySelector(".image-fallback")) {
+        } else {
 
-                const fallback =
-                    document.createElement("div");
-
-                fallback.className = "image-fallback";
-
-                fallback.innerHTML = `
-                    <span>IQRA</span>
-                    <strong>Photo coming soon</strong>
-                `;
-
-                parent.appendChild(fallback);
-
-            }
+          previousSlide();
 
         }
 
-    });
+      }
 
-});
+
+      startAutoSlide();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* =========================================
+     START SLIDER
+  ========================================= */
+
+  showSlide(0);
+
+  startAutoSlide();
+
+}/* =========================================
+   IQRA INCUBATION CENTRE
+   WEBSITE JAVASCRIPT
+========================================= */
 
 
 /* =========================================
-   PREVENT EMPTY HASH JUMP
+   FOOTER YEAR
 ========================================= */
 
-document.querySelectorAll('a[href="#"]').forEach((link) => {
+const yearElement = document.getElementById("year");
 
-    link.addEventListener("click", (event) => {
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
-        event.preventDefault();
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuButton = document.getElementById("menuBtn");
+const navigation = document.getElementById("nav");
+
+if (menuButton && navigation) {
+
+  menuButton.addEventListener("click", function () {
+    navigation.classList.toggle("open");
+  });
+
+  document.querySelectorAll("#nav a").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+      navigation.classList.remove("open");
+    });
+
+  });
+}
+
+
+/* =========================================
+   ADMISSION FORM → WHATSAPP
+========================================= */
+
+const admissionForm = document.getElementById("admissionForm");
+
+if (admissionForm) {
+
+  admissionForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const studentName =
+      document.getElementById("studentName")?.value || "";
+
+    const parentName =
+      document.getElementById("parentName")?.value || "";
+
+    const phone =
+      document.getElementById("phoneInput")?.value || "";
+
+    const classGrade =
+      document.getElementById("classGrade")?.value || "";
+
+    const gender =
+      document.getElementById("gender")?.value || "";
+
+    const timing =
+      document.getElementById("timing")?.value ||
+      "Not specified";
+
+    const course =
+      document.getElementById("course")?.value || "";
+
+    const message =
+      document.getElementById("message")?.value ||
+      "No additional message";
+
+
+    const whatsappMessage =
+`IQRA Incubation Centre - Admission Enquiry
+
+Student Name: ${studentName}
+Parent / Guardian: ${parentName}
+Phone / WhatsApp: ${phone}
+Class / Grade: ${classGrade}
+Gender: ${gender}
+Preferred Timing: ${timing}
+Course / Programme: ${course}
+Message: ${message}`;
+
+
+    const whatsappURL =
+      "https://wa.me/919087476503?text=" +
+      encodeURIComponent(whatsappMessage);
+
+
+    window.open(
+      whatsappURL,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+  });
+}
+
+
+/* =========================================
+   GALLERY SLIDER
+========================================= */
+
+const gallerySlider =
+  document.querySelector(".gallery-slider");
+
+const slides =
+  document.querySelectorAll(".gallery-slide");
+
+const dotsContainer =
+  document.querySelector(".gallery-dots");
+
+const previousButton =
+  document.querySelector(".gallery-prev");
+
+const nextButton =
+  document.querySelector(".gallery-next");
+
+
+let currentSlide = 0;
+let autoSlide = null;
+
+
+if (
+  gallerySlider &&
+  slides.length &&
+  dotsContainer
+) {
+
+
+  /* =========================================
+     CREATE DOTS
+  ========================================= */
+
+  slides.forEach(function (slide, index) {
+
+    const dot =
+      document.createElement("button");
+
+    dot.type = "button";
+
+    dot.className =
+      "gallery-dot" +
+      (index === 0 ? " active" : "");
+
+    dot.setAttribute(
+      "aria-label",
+      "Go to gallery image " + (index + 1)
+    );
+
+
+    dot.addEventListener(
+      "click",
+      function () {
+
+        showSlide(index);
+
+        restartAutoSlide();
+
+      }
+    );
+
+
+    dotsContainer.appendChild(dot);
+
+  });
+
+
+  const dots =
+    document.querySelectorAll(".gallery-dot");
+
+
+  /* =========================================
+     SHOW SLIDE
+  ========================================= */
+
+  function showSlide(index) {
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+
+    slides.forEach(function (slide) {
+
+      slide.classList.remove("active");
 
     });
 
-});
+
+    dots.forEach(function (dot) {
+
+      dot.classList.remove("active");
+
+    });
+
+
+    slides[index].classList.add("active");
+
+    dots[index].classList.add("active");
+
+    currentSlide = index;
+
+  }
+
+
+  /* =========================================
+     NEXT / PREVIOUS
+  ========================================= */
+
+  function nextSlide() {
+
+    showSlide(currentSlide + 1);
+
+  }
+
+
+  function previousSlide() {
+
+    showSlide(currentSlide - 1);
+
+  }
+
+
+  /* =========================================
+     AUTOMATIC SLIDER
+  ========================================= */
+
+  function startAutoSlide() {
+
+    stopAutoSlide();
+
+    autoSlide = setInterval(
+      nextSlide,
+      4500
+    );
+
+  }
+
+
+  function stopAutoSlide() {
+
+    if (autoSlide) {
+
+      clearInterval(autoSlide);
+
+      autoSlide = null;
+
+    }
+
+  }
+
+
+  function restartAutoSlide() {
+
+    stopAutoSlide();
+
+    startAutoSlide();
+
+  }
+
+
+  /* =========================================
+     BUTTONS
+  ========================================= */
+
+  if (nextButton) {
+
+    nextButton.addEventListener(
+      "click",
+      function () {
+
+        nextSlide();
+
+        restartAutoSlide();
+
+      }
+    );
+
+  }
+
+
+  if (previousButton) {
+
+    previousButton.addEventListener(
+      "click",
+      function () {
+
+        previousSlide();
+
+        restartAutoSlide();
+
+      }
+    );
+
+  }
+
+
+  /* =========================================
+     PAUSE ON DESKTOP HOVER
+  ========================================= */
+
+  gallerySlider.addEventListener(
+    "mouseenter",
+    stopAutoSlide
+  );
+
+
+  gallerySlider.addEventListener(
+    "mouseleave",
+    startAutoSlide
+  );
+
+
+  /* =========================================
+     MOBILE SWIPE
+  ========================================= */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+
+  gallerySlider.addEventListener(
+    "touchstart",
+    function (event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+      stopAutoSlide();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  gallerySlider.addEventListener(
+    "touchend",
+    function (event) {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+
+      const swipeDistance =
+        touchEndX - touchStartX;
+
+
+      if (Math.abs(swipeDistance) > 50) {
+
+        if (swipeDistance < 0) {
+
+          nextSlide();
+
+        } else {
+
+          previousSlide();
+
+        }
+
+      }
+
+
+      startAutoSlide();
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  /* =========================================
+     START SLIDER
+  ========================================= */
+
+  showSlide(0);
+
+  startAutoSlide();
+
+}
